@@ -1,0 +1,62 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+    </style>
+
+    <!-- テキストに適用する単純なスタイル -->
+    <style name="MyTextStyle">
+        <item name="android:textColor">#1E2D54</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <!--
+    Frameworkのスタイルを拡張する
+    android:TextAppearanceを拡張して、色とスタイルを変更してる
+    android標準のスタイルはプレフィックス`android:`が必要
+    -->
+    <style name="MyInheritTextStyle" parent="android:TextAppearance">
+        <!--
+        Android標準のスタイルは以下で定義されてる。AndroidStudioで定義に飛ぶことでも確認できる
+        https://android.googlesource.com/platform/frameworks/base/+/master/core/res/res/values/styles.xml
+        -->
+        <item name="android:textColor">#FF0000</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <!--
+    AppCompatのスタイルを拡張する
+    TextAppearance.AppCompatを拡張して、色とスタイルを変更してる
+    ライブラリのスタイルはプレフィックス`android:`はいらない
+    -->
+    <style name="MyInheritAppCompatTextStyle" parent="TextAppearance.AppCompat">
+        <!--
+        AppCompatのスタイルは以下で定義されている。ファイルが分かれてるので探しにくい。AndroidStudioで定義に飛んだほうがわかりやすいかも。
+        あと、values-v21のようにバージョンで定義が別れてることもある。
+        https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-master-dev/appcompat/res/values/
+        -->
+        <item name="android:textColor">#FF00FF</item>
+        <item name="android:textStyle">italic</item>
+    </style>
+
+    <!--
+    parentを使わずに、dotを使って拡張する。
+    この場合MyInheritAppCompatTextStyleを拡張している
+    dotでの拡張は自分のスタイルでのみ使用すべき（TextAppearance.AppCompat.MyStyle みたいにライブラリのをdotで拡張しない）
+    -->
+    <style name="MyInheritAppCompatTextStyle.Large">
+        <item name="android:textSize">22sp</item>
+    </style>
+
+    <!--
+    継承をしないで、スタイル名にdotを含むときは、parent=""をつける
+    -->
+    <style name="NoParent.TextStyle" parent="">
+        <item name="android:textSize">18sp</item>
+    </style>
+</resources>

@@ -1,0 +1,17 @@
+<resources>
+
+    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+    </style>
+
+    <!-- 独自のToolbarテーマ -->
+    <style name="ThemeOverlay.AppTheme.Toolbar" parent="ThemeOverlay.AppCompat">
+        <!-- ThemeOverlay.AppCompatはcolorPrimary等をFrameworkのandroid:colorPrimary等にコピーしてる -->
+
+        <!-- 背景とテキストの色を変更 -->
+        <item name="colorPrimary">#E64A19</item>
+        <item name="android:textColorPrimary">#ffcdd2</item>
+    </style>
+</resources>

@@ -1,0 +1,39 @@
+<resources>
+
+    <!--
+    テーマの定義
+    この属性が各Viewに作用していく
+    -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <!--
+        どういう属性があるかは以下を参照
+
+        Android標準
+        https://android.googlesource.com/platform/frameworks/base/+/master/core/res/res/values/attrs.xml
+        AppCompat
+        https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-master-dev/appcompat/res/values/attrs.xml
+        -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+    </style>
+
+    <!--
+    テーマを拡張して、colorPrimaryを変える
+    Toolbarとステータスバーの色と、下で定義してるMyTextStyleのテキストカラーが変わる
+    -->
+    <style name="AppTheme.Purple">
+        <item name="colorPrimary">#9C27B0</item>
+        <item name="colorPrimaryDark">#6A1B9A</item>
+    </style>
+
+    <!-- テーマの属性値を使ったスタイル定義 -->
+    <style name="MyTextStyle">
+        <!--
+        <item name="colorPrimary"> の色を使ってる
+        Activityが適用してるテーマによって色が変わる（AndroidManifestで定義）
+        -->
+        <item name="android:textColor">?attr/colorPrimary</item>
+        <!-- ?colorPrimary でもOK -->
+    </style>
+</resources>

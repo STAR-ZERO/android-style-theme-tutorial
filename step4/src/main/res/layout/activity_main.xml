@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <!--
+    Viewに設定できるスタイルは1つのみだが、TextViewのテキストに関連するスタイルはtextAppearanceで指定することが可能
+    （ButtonなどのTextViewを継承してるのも可能）
+    -->
+
+    <!--
+    スタイルが適用される優先順位
+    https://developer.android.com/guide/topics/ui/look-and-feel/themes#hierarchy
+    -->
+
+    <!-- textAppearanceのみを設定した場合 -->
+    <TextView
+        android:id="@+id/text1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="textAppearance"
+        android:textAppearance="@style/MyTextAppearance"
+        app:layout_constraintBottom_toTopOf="@+id/text2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_chainStyle="packed" />
+
+    <!-- textAppearanceとstyleを設定した場合はstyleのほうが優先度が高い -->
+    <TextView
+        android:id="@+id/text2"
+        style="@style/MyTextStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="textAppearance and style"
+        android:textAppearance="@style/MyTextAppearance"
+        app:layout_constraintBottom_toTopOf="@+id/text3"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/text1" />
+
+    <!-- 更にViewに直接設定した場合は、そちらのほうが優先度が高い -->
+    <TextView
+        android:id="@+id/text3"
+        style="@style/MyTextStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="textAppearance and style and Directly"
+        android:textAppearance="@style/MyTextAppearance"
+        android:textColor="#673AB7"
+        android:textSize="14sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/text2" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,24 @@
+<resources>
+
+    <!--
+    親にMaterialComponentsを指定する
+    既存アプリのAppCompatから移行する場合は、テストをしっかり行う必要がある
+    もし、厳しいようであれば、下で定義してるBridgeを使う
+    -->
+    <style name="AppTheme" parent="Theme.MaterialComponents.Light.DarkActionBar">
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+    </style>
+
+    <!--
+    BridgeのテーマはAppComponentから継承していて、新しいMaterialComponentsのテーマ属性も定義されている
+    既存アプリに対応する場合は、Bridgeを使うと移行が簡単に可能
+    -->
+    <style name="AppThemeBridge" parent="Theme.MaterialComponents.Light.DarkActionBar.Bridge">
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+    </style>
+
+</resources>

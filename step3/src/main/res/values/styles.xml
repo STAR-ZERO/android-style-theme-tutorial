@@ -1,0 +1,48 @@
+<resources>
+
+    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+
+        <!--
+        デフォルトのボタンスタイルを色がついたボタンに変更する
+        AppCompatButtonはbuttonStyleをデフォルトで適用する
+        AppCompatが用意してくれてる別のスタイルに変更する
+        -->
+        <item name="buttonStyle">@style/Widget.AppCompat.Button.Colored</item>
+    </style>
+
+    <style name="BlueAppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+
+        <!--
+        buttonStyleを使わずにボタンの背景色とテキストカラーを変更する
+        buttonStyleがデフォルトで適用してるスタイルは、colorButtonNormalとtextColorPrimaryを参照してるので、これを変更するとボタンのスタイルも変更される
+        textColorPrimaryなどは他でも参照されてる可能性あるので注意が必要
+        -->
+        <item name="colorButtonNormal">#2196F3</item>
+        <item name="android:textColorPrimary">#0D47A1</item>
+    </style>
+
+    <style name="GreenAppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+
+        <!--
+        buttonStyleを独自のスタイルにすることもできる
+        この場合、普段なら設定されてるrippleエフェクト等も自分で設定する必要がある
+        AppCompatが用意してくれてるスタイルを継承してやったほうが良さそう
+        -->
+        <item name="buttonStyle">@style/GreenButton</item>
+    </style>
+
+    <style name="GreenButton">
+        <item name="android:background">#4CAF50</item>
+        <item name="android:textColor">#1B5E20</item>
+    </style>
+
+</resources>
